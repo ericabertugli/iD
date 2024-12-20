@@ -71,26 +71,6 @@ export function uiFormFields(context) {
 
         var placeholder = titles.slice(0,3).join(', ') + ((titles.length > 3) ? '…' : '');
 
-
-        var more = selection.selectAll('.more-fields')
-            .data((_state === 'hover' || moreFields.length === 0) ? [] : [0]);
-
-        more.exit()
-            .remove();
-
-        var moreEnter = more.enter()
-            .append('div')
-            .attr('class', 'more-fields')
-            .append('label');
-
-        moreEnter
-            .append('span')
-            .call(t.append('inspector.add_fields'));
-
-        more = moreEnter
-            .merge(more);
-
-
         var input = more.selectAll('.value')
             .data([0]);
 

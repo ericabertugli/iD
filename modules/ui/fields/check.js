@@ -109,6 +109,8 @@ export function uiFieldCheck(field, context) {
         enter
             .append('input')
             .property('indeterminate', field.type !== 'defaultCheck')
+                        .attr('disabled', true)
+                        .attr('readonly', true)
             .attr('type', 'checkbox')
             .attr('id', field.domId);
 
@@ -120,6 +122,8 @@ export function uiFieldCheck(field, context) {
         if (field.type === 'onewayCheck') {
             enter
                 .append('button')
+                            .attr('disabled', true)
+                            .attr('readonly', true)
                 .attr('class', 'reverser' + (reverserHidden() ? ' hide' : ''))
                 .append('span')
                 .attr('class', 'reverser-span');

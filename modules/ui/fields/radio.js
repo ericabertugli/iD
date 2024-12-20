@@ -59,6 +59,8 @@ export function uiFieldRadio(field, context) {
         enter
             .append('input')
             .attr('type', 'radio')
+                        .attr('disabled', true)
+                        .attr('readonly', true)
             .attr('name', field.id)
             .attr('value', function(d) { return stringsField.t('options.' + d, { 'default': d }); })
             .attr('checked', false);

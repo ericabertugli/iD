@@ -186,6 +186,8 @@ export function uiFieldAddress(field, context) {
             .data(row)
             .enter()
             .append('input')
+                        .attr('disabled', true)
+                        .attr('readonly', true)
             .property('type', 'text')
             .call(updatePlaceholder)
             .attr('class', function (d) { return 'addr-' + d.id; })

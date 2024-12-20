@@ -487,6 +487,8 @@ export function uiFieldCombo(field, context) {
 
         _input = _input.enter()
             .append('input')
+                        .attr('disabled', true)
+                        .attr('readonly', true)
             .attr('type', 'text')
             .attr('id', field.domId)
             .call(utilNoAuto)

@@ -42,6 +42,8 @@ export function uiFieldRoadspeed(field, context) {
 
         input = input.enter()
             .append('input')
+        .attr('disabled', true)
+        .attr('readonly', true)
             .attr('type', 'text')
             .attr('class', 'roadspeed-number')
             .attr('id', field.domId)
@@ -61,6 +63,8 @@ export function uiFieldRoadspeed(field, context) {
 
         unitInput = unitInput.enter()
             .append('input')
+                        .attr('disabled', true)
+                        .attr('readonly', true)
             .attr('type', 'text')
             .attr('class', 'roadspeed-unit')
             .attr('aria-label', t('inspector.speed_unit'))

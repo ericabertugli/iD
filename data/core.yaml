@@ -761,7 +761,7 @@ en:
     location: Location
     add_fields: "Add field:"
     lock:
-      suggestion: 'The "{label}" field is locked because there is a Wikidata tag. You can delete it or edit the tags in the "Tags" section.'
+      suggestion: 'The "{label}" field is locked. You can only delete it or edit it in OpenStreetMaps.'
     display_name:
       direction: "{direction}"
       network: "{network}"

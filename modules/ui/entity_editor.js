@@ -13,7 +13,7 @@ import { uiSectionEntityIssues } from './sections/entity_issues';
 import { uiSectionFeatureType } from './sections/feature_type';
 import { uiSectionPresetFields } from './sections/preset_fields';
 import { uiSectionRawMemberEditor } from './sections/raw_member_editor';
-import { uiSectionRawMembershipEditor } from './sections/raw_membership_editor';
+//import { uiSectionRawMembershipEditor } from './sections/raw_membership_editor';
 import { uiSectionRawTagEditor } from './sections/raw_tag_editor';
 import { uiSectionSelectionList } from './sections/selection_list';
 
@@ -96,7 +96,7 @@ export function uiEntityEditor(context) {
                 uiSectionPresetFields(context).on('change', changeTags).on('revert', revertTags),
                 uiSectionRawTagEditor('raw-tag-editor', context).on('change', changeTags),
                 uiSectionRawMemberEditor(context),
-                uiSectionRawMembershipEditor(context)
+                //uiSectionRawMembershipEditor(context)
             ];
         }
 

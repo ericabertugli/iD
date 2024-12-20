@@ -3,7 +3,7 @@ import { select as d3_select } from 'd3-selection';
 import _debounce from 'lodash-es/debounce';
 import * as countryCoder from '@rapideditor/country-coder';
 
-import { presetManager } from '../../presets';
+//import { presetManager } from '../../presets';
 import { fileFetcher } from '../../core/file_fetcher';
 import { t, localizer } from '../../core/localizer';
 import { utilDetect, utilGetSetValue, utilNoAuto, utilRebind, utilTotalExtent } from '../../util';
@@ -51,24 +51,9 @@ export function uiFieldText(field, context) {
 
 
     function calcLocked() {
-        // Protect certain fields that have a companion `*:wikidata` value
-        var isLocked = (field.id === 'brand' || field.id === 'network' || field.id === 'operator' || field.id === 'flag') &&
-            _entityIDs.length &&
-            _entityIDs.some(function(entityID) {
-                var entity = context.graph().hasEntity(entityID);
-                if (!entity) return false;
-
-                // Features linked to Wikidata are likely important and should be protected
-                if (entity.tags.wikidata) return true;
-
-                var preset = presetManager.match(entity, context.graph());
-                var isSuggestion = preset && preset.suggestion;
-
-                // Lock the field if there is a value and a companion `*:wikidata` value
-                var which = field.id;   // 'brand', 'network', 'operator', 'flag'
-                return isSuggestion && !!entity.tags[which] && !!entity.tags[which + ':wikidata'];
-            });
-
+        // Only unlock skating values
+        var idPrefix = 'ideditor-form_field_';
+        var isLocked = !(field.id.startsWith('${idPrefix}suitable_for_inline_skates') || field.id.startsWith('${idPrefix}inline_skating_level'));
         field.locked(isLocked);
     }
 

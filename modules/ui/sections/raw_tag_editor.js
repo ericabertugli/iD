@@ -220,18 +220,14 @@ export function uiSectionRawTagEditor(id, context) {
             .attr('class', 'value-wrap')
             .append('input')
             .property('type', 'text')
+            .attr('disabled', true)
+            .attr('readonly', true)
             .attr('class', 'value')
             .call(utilNoAuto)
             .on('focus', interacted)
             .on('blur', valueChange)
             .on('change', valueChange)
             .on('keydown.push-more', pushMore);
-
-        innerWrap
-            .append('button')
-            .attr('class', 'form-field-button remove')
-            .attr('title', t('icons.remove'))
-            .call(svgIcon('#iD-operation-delete'));
 
 
         // Update

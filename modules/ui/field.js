@@ -37,7 +37,7 @@ export function uiField(context, presetField, entityIDs, options) {
         }, geoExtent());
     }
 
-    var _locked = false;
+    var _locked = true;
     var _lockedTip = uiTooltip()
         .title(() => t.append('inspector.lock.suggestion', { label: field.title }))
         .placement('bottom');

@@ -47,6 +47,8 @@ export function uiFieldAccess(field, context) {
             .attr('class', 'preset-input-access-wrap')
             .append('input')
             .attr('type', 'text')
+            .attr('disabled', true)
+            .attr('readonly', true)
             .attr('class', function(d) { return 'preset-input-access preset-input-access-' + d; })
             .call(utilNoAuto)
             .each(function(d) {

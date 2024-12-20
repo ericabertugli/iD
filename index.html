@@ -47,11 +47,19 @@
           window.context = window.id = context;  // for debugging
           context.init();
 
-          // disable boundaries (unless we have an explicit disable_features list)
-          var q = iD.utilStringQs(window.location.hash);
-          if (!q.hasOwnProperty('disable_features')) {
-            context.features().disable('boundaries');
-          }
+           // disable boundaries (unless we have an explicit disable_features list)
+          context.features().disable('boundaries');
+          context.features().disable('points');
+          context.features().disable('buildings');
+          context.features().disable('building_parts');
+          context.features().disable('indoor');
+          context.features().disable('landuse');
+          context.features().disable('water');
+          context.features().disable('rail');
+          context.features().disable('aerialways');
+          context.features().disable('power');
+          context.features().disable('past_future');
+          context.features().disable('others');
         }
       }
     </script>
